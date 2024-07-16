@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+            $(".m_btn a").click(function(){
+                $(this).toggleClass("on");
+            })// .m_btn a.click
+        })// jQuery끝
+    </script>
+
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, li{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .wrap{
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header{
+            height: 200px;
+            background-color: skyblue;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section{}
+        .slide{}
+        .slide img{
+            width: 100%;
+        }
+
+        /* 모바일 크기로 변경되야 보이는 거기에 일다 안보이게 설정 */
+        .m_btn{
+            display: none;
+        }
+
+        .m_btn a{
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-image: url(source/toggle_button.png);
+            background-repeat: no-repeat;
+            text-indent: -99999px;
+            border: 1px solid black;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .m_btn a.on{
+            background-position: right;
+        }
+
+        .logo{
+            width: 150px;
+        }
+
+        .logo img{
+            width: 100%;
+        }
+
+        .logo a{
+            display: block;
+        }
+
+        .nav{}
+
+        .main{
+            display: flex;
+        }
+        .main li{
+            padding: 0 10px;
+        }
+        .main li a{}
+
+        /* @media screen 반응형 옵션은 항상 스타일 제일 밑에 
+        하단에 위치해 있어야 위에 값에서부터 끌어와 반응형에 적용할수 있다 */
+        @media screen and (max-width: 768px){
+            .wrap{
+                width: 90%;
+            }
+            .header{
+                height: 100px;
+                background-color: aqua;
+            }
+            .logo{
+                width: 100px;
+            }
+        }
+
+        @media screen and (max-width: 430px){
+            .wrap{
+                width: 100%;
+            }
+            .header{
+                background-color: orange;
+            }
+            .nav{
+                display: none;
+            }
+            .m_btn{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <h1 class="logo"><a href="#"><img src="source/icon1.png" alt="ico1"></a></h1>
+
+            <nav class="nav">
+                <ul class="main">
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                    <li><a href="#">menu4</a></li>
+                    <li><a href="#">menu5</a></li>
+                    <li><a href="#">menu6</a></li>
+                </ul>
+            </nav><!-- nav -->
+
+            <div class="m_btn">
+                <a href="#">버튼</a>
+            </div>
+        </header><!-- header -->
+
+        <section class="section">
+            <div class="slide">
+                <img src="source/a01.jpg" alt="a1">
+            </div><!-- slide -->
+        </section><!-- section -->
+    </div><!-- wrap -->
+</body>
+</html>
